@@ -10,6 +10,7 @@ ping:
 venv: requirements.txt
 	python -m venv $(VENV)
 	$(VENV)/bin/pip install -U -r requirements.txt
+	@echo "$@: run "'`source $(VENV)/bin/activate`'" to use venv\n"'      run `deactivate`'" to exit venv"
 
 run: venv
 	$(VENV)/bin/python playground.py
